@@ -1,0 +1,36 @@
+<div class="container"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around center"
+    fxLayoutGap="10px"
+    fxLayoutGap.xs="0">
+
+  <div fxFlex="40" *ngIf="pic">
+    <mat-card [style.background]="'grey'">
+      <mat-card-header>
+        <mat-card-title>
+          <h3 style="color:white">{{pic.name | uppercase}}</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src={{pic.image}} alt={{pic.name}}>
+      <mat-card-content>  <p>{{pic.description}} </p> </mat-card-content>
+      <mat-card-actions>
+        <button md-button (click)="goBack()">BACK</button>
+       <button mat-button>LIKE</button>
+       <button mat-button>SHARE</button>
+     </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div fxFlex="40">
+    <mat-list>
+      <mat-list-item *ngFor="let commentDetail of pic.comments">
+        <div><h1> Comments </h1></div>
+        <h1 style="color:black" mat-line> {{commentDetail.comment}} </h1>
+        <p style="color:black" mat-line> {{commentDetail.rating}}</p>
+        <p style="color:black" mat-line>--{{commentDetail.author}} {{commentDetail.date | date }}</p>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

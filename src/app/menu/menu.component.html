@@ -1,0 +1,44 @@
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+
+     <div fxFlex>
+       <div>
+         <h3>Menu</h3>
+         <hr>
+       </div>
+     </div>
+
+<div fxFlex>
+  <mat-grid-list cols="5" rowHeight="200px">
+  <mat-grid-tile *ngFor="let pic of pics" [routerLink]="['/picdetail',pic.id]">
+    <img height="200px" src={{pic.image}} alt={{pic.name}}>
+    <mat-grid-tile-footer>
+    <h1 style="color:black"> {{pic.name | uppercase}} </h1>
+  </mat-grid-tile-footer>
+</mat-grid-tile>
+</mat-grid-list>
+</div>
+
+
+</div>
+
+
+<!-- <div fxFlex *ngIf="selectedPic">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h3>{{selectedPic.name | uppercase}}</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src={{selectedPic.image}} alt={{selectedPic.name}}>
+      <mat-card-content>
+        <p>{{selectedPic.description}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div> -->
