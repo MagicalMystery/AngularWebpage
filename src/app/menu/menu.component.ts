@@ -11,7 +11,7 @@ import { PicturesService } from '../services/pictures.service';
 export class MenuComponent implements OnInit {
 
   pics: Pic[];
-  selectedPic : Pic;
+  // selectedPic : Pic;
 
   constructor(private picService: PicturesService) { }
 
@@ -19,9 +19,9 @@ export class MenuComponent implements OnInit {
     this.pics = this.picService.getPictures();
   }
 
-  onselect(pic:Pic){
-
-    this.selectedPic=pic;
-  }
+  // onselect(pic:Pic){
+  //
+  //   this.selectedPic=pic;
+  // }
 
 }
